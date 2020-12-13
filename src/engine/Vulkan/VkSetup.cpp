@@ -4,9 +4,11 @@
 #include <stdexcept>
 #include "VkSetup.h"
 #include "VkValidationLayers.h"
+#include "VkPhysicalDevice.h"
 
 void VkSetup::initVulkan() {
     createInstance();
+    pickPhysicalDevice(instance);
 }
 
 void VkSetup::createInstance() {

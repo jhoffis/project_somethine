@@ -9,7 +9,7 @@ add_executable(projectsomthine
         src/engine/Window.h
         src/engine/Vulkan/VkSetup.cpp
         src/engine/Vulkan/VkSetup.h
-        src/engine/Vulkan/VkValidationLayers.cpp src/engine/Vulkan/VkValidationLayers.h)
+        src/engine/Vulkan/VkValidationLayers.cpp src/engine/Vulkan/VkValidationLayers.h src/engine/Vulkan/VkPhysicalDevice.cpp src/engine/Vulkan/VkPhysicalDevice.h)
 
 find_package(Vulkan REQUIRED)
 target_include_directories(${PROJECT_NAME} PUBLIC ${Vulkan_INCLUDE_DIRS})
