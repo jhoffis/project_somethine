@@ -2,7 +2,7 @@
 #include <stdexcept>
 #include <cstdlib>
 #include "engine/Window.h"
-#include "engine/VkSetup.h"
+#include "engine/Vulkan/VkSetup.h"
 
 class Game {
     Window window;
@@ -17,7 +17,7 @@ public:
 
 private:
     void initVulkan() {
-        vkSetup.initVulkan(window);
+        vkSetup.initVulkan();
     }
 
     void mainLoop() {

@@ -1,4 +1,6 @@
 #include "Window.h"
+#include <vector>
+#include <iostream>
 
 const uint32_t WIDTH = 800;
 const uint32_t HEIGHT = 600;
@@ -30,4 +32,18 @@ void Window::initExtensions(VkInstanceCreateInfo *createInfo) {
 
     createInfo->enabledExtensionCount = glfwExtensionCount;
     createInfo->ppEnabledExtensionNames = glfwExtensions;
+
+    // vulkan extensions
+    uint32_t extensionCount = 0;
+    vkEnumerateInstanceExtensionProperties(nullptr, &extensionCount, nullptr);
+    std::vector<VkExtensionProperties> extensions(extensionCount);
+    // extension details
+    vkEnumerateInstanceExtensionProperties(nullptr, &extensionCount, extensions.data());
+
+    std::cout << "available extensions:\n";
+
+    for (const auto& extension : extensions) {
+        std::cout << '\t' << extension.extensionName << '\n';
+    }
+
 }

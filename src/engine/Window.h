@@ -18,7 +18,7 @@ public:
         return window;
     }
 
-    void initExtensions(VkInstanceCreateInfo *createInfo);
+    static void initExtensions(VkInstanceCreateInfo *createInfo);
 
 private:
     GLFWwindow* window;

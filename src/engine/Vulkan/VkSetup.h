@@ -1,15 +1,17 @@
 //
 // Created by Jens Benz on 20.11.2020.
 //
-#include "Window.h"
+#include <vulkan/vulkan.h>
+#include "../Window.h"
 #ifndef PROJECTSOMTHINE_VKSETUP_H
 #define PROJECTSOMTHINE_VKSETUP_H
 
 class VkSetup {
 public:
     VkSetup() = default;
-    void initVulkan(const Window& window);
-    void createInstance(Window window);
+    ~VkSetup();
+    void initVulkan();
+    void createInstance();
 private:
     VkInstance instance{};
 };

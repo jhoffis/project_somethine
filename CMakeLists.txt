@@ -3,7 +3,13 @@ project(projectsomthine)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(projectsomthine src/main.cpp src/engine/Window.cpp src/engine/Window.h src/engine/VkSetup.cpp src/engine/VkSetup.h)
+add_executable(projectsomthine
+        src/main.cpp
+        src/engine/Window.cpp
+        src/engine/Window.h
+        src/engine/Vulkan/VkSetup.cpp
+        src/engine/Vulkan/VkSetup.h
+        src/engine/Vulkan/VkValidationLayers.cpp src/engine/Vulkan/VkValidationLayers.h)
 
 find_package(Vulkan REQUIRED)
 target_include_directories(${PROJECT_NAME} PUBLIC ${Vulkan_INCLUDE_DIRS})
